@@ -20,4 +20,4 @@ If your Linux can only use the xrandr command to adjust the screen brightness be
 
 - 方法二：直接在命令行运行，此时在系统设置中调整屏幕亮度即可
 
-**提示：**变量backlight_dir 也可以是**/sys/class/backlight/intel_backlight/ **或其他包含文件**brightness** 和**brightness_max** 的文件夹。 但是，默认为 **/sys/class/backlight/acpi_video0/ **可能在大多数情况下有效。这取决于您的系统。
+**Tips：** 变量backlight_dir 也可以是 **/sys/class/backlight/intel_backlight/** 或其他包含文件 **brightness** 和 **brightness_max** 的文件夹。 但是，默认为 **/sys/class/backlight/acpi_video0/** 可能在大多数情况下有效。这取决于您的系统。
