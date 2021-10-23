@@ -8,7 +8,7 @@
 #The following variable is backlight_dir can also be /sys/class/backlight/intel_backlight/ 
 #or other contains files brightness and brightness_max folder. 
 #However, the default is /sys/class/backlight/acpi_video0/ may work in most cases.It depends on your system.
-
+{
 echo "Running... Now you can change your backlight."
 backlight_dir=/sys/class/backlight/acpi_video0/
 current_file=brightness
@@ -38,4 +38,5 @@ do
 
     sleep 0.01
 done
+}&
 
