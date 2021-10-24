@@ -39,7 +39,7 @@ do
     xrandrlight_real=$(awk 'BEGIN{printf "%.6f",('$xrandrlight_min'+'$xrandrlight_point'*'$brightness_percent')}')
     xrandr --output $device_ --brightness $xrandrlight_real
     sleep 1
-    i=i+1
+    i=$i+1
 done
 
 while(true)
