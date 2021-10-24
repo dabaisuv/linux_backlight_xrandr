@@ -45,7 +45,7 @@ done
 
 while(true)
 do
-    if [ $xrandrlight_real != $(awk 'BEGIN{printf "%.6f",('$xrandrlight_min'+'$xrandrlight_point'*'$brightness_percent')}') ]
+    if [ $brightness_current != $(cat $backlight_dir/$current_file) ]
     then
         brightness_current=$(cat $backlight_dir/$current_file)
         brightness_percent=$(awk 'BEGIN{printf "%.6f",('$brightness_current'/'$brightness_max')*100}')
@@ -56,3 +56,4 @@ do
     sleep 0.01
 done
 }&
+
