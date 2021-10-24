@@ -31,16 +31,17 @@ device_=${array[$in_use_-1]}
 
 xrandrlight_real=$(awk 'BEGIN{printf "%.6f",('$xrandrlight_min'+'$xrandrlight_point'*'$brightness_percent')}')
 
-i=0
-while( [ $i != 5 ] )
+m_i=0
+while [ $m_i != 5 ]
 do
     brightness_current=$(cat $backlight_dir/$current_file)
     brightness_percent=$(awk 'BEGIN{printf "%.6f",('$brightness_current'/'$brightness_max')*100}')
     xrandrlight_real=$(awk 'BEGIN{printf "%.6f",('$xrandrlight_min'+'$xrandrlight_point'*'$brightness_percent')}')
     xrandr --output $device_ --brightness $xrandrlight_real
     sleep 1
-    i=$i+1
+    let m_i++
 done
+
 
 while(true)
 do
