@@ -10,6 +10,7 @@
 #However, the default is /sys/class/backlight/acpi_video0/ may work in most cases.It depends on your system.
 {
 echo "Running... Now you can change your backlight."
+sleep 3
 backlight_dir=/sys/class/backlight/acpi_video0/
 current_file=brightness
 max_file=max_brightness
@@ -32,7 +33,7 @@ device_=${array[$in_use_-1]}
 xrandrlight_real=$(awk 'BEGIN{printf "%.6f",('$xrandrlight_min'+'$xrandrlight_point'*'$brightness_percent')}')
 
 m_i=0
-while [ $m_i != 5 ]
+while [ $m_i != 3 ]
 do
     brightness_current=$(cat $backlight_dir/$current_file)
     brightness_percent=$(awk 'BEGIN{printf "%.6f",('$brightness_current'/'$brightness_max')*100}')
